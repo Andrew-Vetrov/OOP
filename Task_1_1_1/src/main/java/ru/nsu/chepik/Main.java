@@ -79,6 +79,9 @@ class Heap {
 
 public class Main {
     public static int[] heapSort(int[] nums) {
+        if (nums.length == 0)
+            return new int[] {};
+
         Heap heap = new Heap(nums.length);
         for (int num : nums) {
             heap.add(num);
@@ -94,18 +97,5 @@ public class Main {
 
     public static void main(String[] args) {
         int n = 5;
-//        Scanner scanner = new Scanner(System.in);
-//
-//        int n = scanner.nextInt();
-//        int[] input = new int[n];
-//
-//        for (int i = 0; i < n; i++)
-//            input[i] = scanner.nextInt();
-//
-//        int[] sorted = heapSort(input);
-//
-//        System.out.println(Arrays.toString(sorted));
-//
-//        scanner.close();
     }
 }
