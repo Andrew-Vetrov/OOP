@@ -25,20 +25,25 @@ class Heap {
     }
 
     private int leftChild(int v) {
-        if (size < v * 2 + 1)
+        if (size < v * 2 + 1) {
             return -1;
+        }
+
         return v * 2 + 1;
     }
 
     private int rightChild(int v) {
-        if (size < v * 2 + 2)
+        if (size < v * 2 + 2) {
             return -1;
+        }
+
         return v * 2 + 2;
     }
 
     private void siftUp(int v) {
-        if (v == 0)
+        if (v == 0) {
             return;
+        }
 
         if (heap[v] < heap[parent(v)]) {
             swap(v, parent(v));
@@ -51,11 +56,13 @@ class Heap {
         int leftChild = leftChild(ind);
         int now = ind;
 
-        if (rightChild != -1 && heap[rightChild] < heap[now])
+        if (rightChild != -1 && heap[rightChild] < heap[now]) {
             now = rightChild;
+        }
 
-        if (leftChild != -1 && heap[leftChild] < heap[now])
+        if (leftChild != -1 && heap[leftChild] < heap[now]) {
             now = leftChild;
+        }
 
         if (now != ind) {
             swap(ind, now);
@@ -79,8 +86,9 @@ class Heap {
 
 public class Main {
     public static int[] heapSort(int[] nums) {
-        if (nums.length == 0)
-            return new int[] {};
+        if (nums.length == 0) {
+            return new int[]{};
+        }
 
         Heap heap = new Heap(nums.length);
         for (int num : nums) {
