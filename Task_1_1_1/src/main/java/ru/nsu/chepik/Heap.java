@@ -8,22 +8,45 @@ public class Heap {
     private int capacity;
     private int[] heap;
 
+    /**
+     * Heap.
+     *
+     * @param capacity
+     */
     public Heap(int capacity) {
         this.size = 0;
         this.capacity = capacity;
         this.heap = new int[capacity];
     }
 
+    /**
+     * swap.
+     *
+     * @param ind1
+     * @param ind2
+     */
     private void swap(int ind1, int ind2) {
         int temp = heap[ind1];
         heap[ind1] = heap[ind2];
         heap[ind2] = temp;
     }
 
+    /**
+     * parent.
+     *
+     * @param v
+     * @return
+     */
     private int parent(int v) {
         return (v - 1) / 2;
     }
 
+    /**
+     * leftChild.
+     *
+     * @param v
+     * @return
+     */
     private int leftChild(int v) {
         if (size < v * 2 + 1) {
             return -1;
@@ -32,6 +55,12 @@ public class Heap {
         return v * 2 + 1;
     }
 
+    /**
+     * rightChild.
+     *
+     * @param v
+     * @return
+     */
     private int rightChild(int v) {
         if (size < v * 2 + 2) {
             return -1;
@@ -40,6 +69,11 @@ public class Heap {
         return v * 2 + 2;
     }
 
+    /**
+     * siftUp.
+     *
+     * @param v
+     */
     private void siftUp(int v) {
         if (v == 0) {
             return;
@@ -51,6 +85,11 @@ public class Heap {
         }
     }
 
+    /**
+     * sfitDown.
+     *
+     * @param ind
+     */
     private void siftDown(int ind) {
         int rightChild = rightChild(ind);
         int leftChild = leftChild(ind);
@@ -70,6 +109,11 @@ public class Heap {
         }
     }
 
+    /**
+     * extractMin.
+     *
+     * @return
+     */
     public int extractMin() {
         int answer = heap[0];
         heap[0] = heap[--size];
@@ -77,6 +121,11 @@ public class Heap {
         return answer;
     }
 
+    /**
+     * add.
+     *
+     * @param value
+     */
     public void add(int value) {
         heap[size] = value;
         size++;
@@ -107,6 +156,11 @@ public class Heap {
         return res;
     }
 
+    /**
+     * main.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int n = 5;
     }

@@ -2,7 +2,6 @@ package ru.nsu.chepik;
 
 import java.util.Arrays;
 import java.util.SplittableRandom;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -22,8 +21,8 @@ public class HeapTest {
         return array;
     }
 
-    public static void runTests(int N, int arraySize, int minValue, int maxValue) {
-        for (int i = 0; i < N; i++) {
+    public static void runTests(int n, int arraySize, int minValue, int maxValue) {
+        for (int i = 0; i < n; i++) {
             int[] randomArray = generateRandomArray(arraySize, minValue, maxValue);
 
             int[] arrayForStandardSort = Arrays.copyOf(randomArray, randomArray.length);
@@ -37,17 +36,17 @@ public class HeapTest {
             assertArrayEquals(arrayForStandardSort, heapSortedArray);
         }
 
-        System.out.println("All " + N + " tests passed successfully!");
+        System.out.println("All " + n + " tests passed successfully!");
     }
 
     @Test
-    void N_tests() {
-        int N = 1000;
+    void n_tests() {
+        int n = 1000;
         int arraySize = 100000;
         int minValue = -1000000;
         int maxValue = 1000000;
 
-        runTests(N, arraySize, minValue, maxValue);
+        runTests(n, arraySize, minValue, maxValue);
     }
 
     @Test
