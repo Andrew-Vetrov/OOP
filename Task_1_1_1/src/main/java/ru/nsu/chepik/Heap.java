@@ -11,7 +11,7 @@ public class Heap {
     /**
      * Heap.
      *
-     * @param capacity
+     * @param capacity максимальный размер кучи.
      */
     public Heap(int capacity) {
         this.size = 0;
@@ -22,8 +22,8 @@ public class Heap {
     /**
      * swap.
      *
-     * @param ind1
-     * @param ind2
+     * @param ind1 индекс первого элемента.
+     * @param ind2 индекс второго элемента.
      */
     private void swap(int ind1, int ind2) {
         int temp = heap[ind1];
@@ -34,7 +34,7 @@ public class Heap {
     /**
      * parent.
      *
-     * @param v
+     * @param v индекс элемента.
      * @return
      */
     private int parent(int v) {
@@ -44,7 +44,7 @@ public class Heap {
     /**
      * leftChild.
      *
-     * @param v
+     * @param v индекс элемента.
      * @return
      */
     private int leftChild(int v) {
@@ -58,7 +58,7 @@ public class Heap {
     /**
      * rightChild.
      *
-     * @param v
+     * @param v индекс элемента.
      * @return
      */
     private int rightChild(int v) {
@@ -72,7 +72,7 @@ public class Heap {
     /**
      * siftUp.
      *
-     * @param v
+     * @param v индекс элемента.
      */
     private void siftUp(int v) {
         if (v == 0) {
@@ -88,7 +88,7 @@ public class Heap {
     /**
      * sfitDown.
      *
-     * @param ind
+     * @param ind индекс элемента.
      */
     private void siftDown(int ind) {
         int rightChild = rightChild(ind);
@@ -112,7 +112,7 @@ public class Heap {
     /**
      * extractMin.
      *
-     * @return
+     * @return возвращает минимальный элемент (вершину кучи).
      */
     public int extractMin() {
         int answer = heap[0];
@@ -124,7 +124,7 @@ public class Heap {
     /**
      * add.
      *
-     * @param value
+     * @param value добавляемое в кучу значение.
      */
     public void add(int value) {
         heap[size] = value;
@@ -135,8 +135,8 @@ public class Heap {
     /**
      * Создание и сортировка кучи
      *
-     * @param nums - unsorted array
-     * @return sorted array
+     * @param nums неотсортированный массив.
+     * @return возвращает отсортированный массив.
      */
     static public int[] heapSort(int[] nums) {
         if (nums.length == 0) {
@@ -159,7 +159,7 @@ public class Heap {
     /**
      * main.
      *
-     * @param args
+     * @param args аргументы main.
      */
     public static void main(String[] args) {
         int n = 5;

@@ -1,17 +1,25 @@
 package ru.nsu.chepik;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Arrays;
 import java.util.SplittableRandom;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Class for tests.
  */
 public class HeapTest {
 
+    /**
+     * generateRandomArray.
+     *
+     * @param size размер массива.
+     * @param minValue минимальное значение элемента массива.
+     * @param maxValue максимальное значение элемента массива.
+     * @return
+     */
     private static int[] generateRandomArray(int size, int minValue, int maxValue) {
         SplittableRandom random = new SplittableRandom();
         int[] array = new int[size];
@@ -21,6 +29,14 @@ public class HeapTest {
         return array;
     }
 
+    /**
+     * runTests.
+     *
+     * @param n количество тестов.
+     * @param arraySize размер массива.
+     * @param minValue минимальное значение элемента массива.
+     * @param maxValue максимальное значение элемента массива.
+     */
     public static void runTests(int n, int arraySize, int minValue, int maxValue) {
         for (int i = 0; i < n; i++) {
             int[] randomArray = generateRandomArray(arraySize, minValue, maxValue);
