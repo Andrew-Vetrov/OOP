@@ -1,9 +1,9 @@
 package ru.nsu.chepik;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
-class Heap {
+/**
+ * Main class.
+ */
+public class Heap {
     private int size;
     private int capacity;
     private int[] heap;
@@ -82,10 +82,14 @@ class Heap {
         size++;
         siftUp(size - 1);
     }
-}
 
-public class Main {
-    public static int[] heapSort(int[] nums) {
+    /**
+     * Создание и сортировка кучи
+     *
+     * @param nums - unsorted array
+     * @return sorted array
+     */
+    static public int[] heapSort(int[] nums) {
         if (nums.length == 0) {
             return new int[]{};
         }
