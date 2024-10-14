@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.chepik","l":"Card"},{"p":"ru.nsu.chepik","l":"Deck"},{"p":"ru.nsu.chepik","l":"Game"},{"p":"ru.nsu.chepik","l":"Hand"},{"p":"ru.nsu.chepik","l":"Rank"}];updateSearchResults();
