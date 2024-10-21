@@ -1,5 +1,7 @@
 package ru.nsu.chepik;
 
+import java.util.Objects;
+
 /**
  * Класс деления.
  */
@@ -36,7 +38,34 @@ public class Div extends Expression {
      * @return выражение.
      */
     public Expression derivative(String variable) {
-        return new Div(new Sub(new Mul(first.derivative(variable), second), new Mul(first, second.derivative(variable))), new Mul(second, second));
+        Expression efirst = first.derivative(variable);
+        if (Objects.equals(efirst, new Number(0)) || Objects.equals(second, new Number(0))) {
+            efirst = new Number(0);
+        }
+
+        else {
+            efirst = new Mul(first.derivative(variable), second);
+        }
+
+        Expression esecond = second.derivative(variable);
+        if (Objects.equals(esecond, new Number(0)) || Objects.equals(first, new Number(0))) {
+            esecond = new Number(0);
+        }
+
+        else {
+            esecond = new Mul(first, second.derivative(variable));
+        }
+
+        Expression ethird;
+        if (Objects.equals(second, new Number(0))) {
+            ethird = new Number(0);
+        }
+
+        else {
+            ethird = new Mul(second, second);
+        }
+
+        return new Div(new Sub(efirst, esecond), ethird);
     }
 
     /**

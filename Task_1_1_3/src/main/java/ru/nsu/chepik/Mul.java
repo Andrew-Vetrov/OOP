@@ -1,5 +1,7 @@
 package ru.nsu.chepik;
 
+import java.util.Objects;
+
 /**
  * Класс умножения.
  */
@@ -36,7 +38,23 @@ public class Mul extends Expression {
      * @return выражение.
      */
     public Expression derivative(String variable) {
-        return new Add(new Mul(first.derivative(variable), second), new Mul(first, second.derivative(variable)));
+        Expression prom = first.derivative(variable), res;
+
+        if (Objects.equals(prom, new Number(0)) || Objects.equals(second, new Number(0))) {
+            res = new Number(0);
+        }
+
+        else {
+            res = new Mul(prom, second);
+        }
+
+        prom = second.derivative(variable);
+
+        if (!Objects.equals(prom, new Number(0)) && !Objects.equals(first, new Number(0))) {
+            res = new Add(res, new Mul(first, prom));
+        }
+
+        return res;
     }
 
     /**

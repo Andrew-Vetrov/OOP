@@ -1,7 +1,5 @@
 package ru.nsu.chepik;
 
-import javax.crypto.NullCipher;
-import javax.lang.model.type.NullType;
 import java.util.Objects;
 
 /**
@@ -182,7 +180,13 @@ public class Parser {
                 oper = nowString.charAt(0);
 
                 if (oper == '*' || oper == '(') {
-                    first = new Mul(first, second);
+                    if (Objects.equals(first, new Number(0)) || Objects.equals(second, new Number(0))) {
+                        first = new Number(0);
+                    }
+
+                    else {
+                        first = new Mul(first, second);
+                    }
                 } else {
                     first = new Div(first, second);
                 }
@@ -199,7 +203,13 @@ public class Parser {
                 oper = nowString.charAt(0);
 
                 if (oper == '*') {
-                    first = new Mul(first, second);
+                    if (Objects.equals(first, new Number(0)) || Objects.equals(second, new Number(0))) {
+                        first = new Number(0);
+                    }
+
+                    else {
+                        first = new Mul(first, second);
+                    }
                 } else {
                     first = new Div(first, second);
                 }

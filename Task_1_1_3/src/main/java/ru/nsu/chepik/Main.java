@@ -12,7 +12,7 @@ public class Main {
         //System.out.println("\n" + e.eval("x = 0; y = 13"));
 
         //String fconsole = scanner.nextLine();
-        String fconsole = "-x+y*(-z)";
+        String fconsole = "x*y+z";
 
         System.out.print("\n\n");
         Expression ex = new Parser().parse(fconsole);
