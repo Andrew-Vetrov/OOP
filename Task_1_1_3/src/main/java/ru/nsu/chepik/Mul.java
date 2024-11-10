@@ -44,12 +44,20 @@ public class Mul extends Expression {
             res = new Number(0);
         }
 
+        else if (Objects.equals(prom, new Number(1))) {
+            res = second;
+        }
+
+        else if (Objects.equals(second, new Number(1))) {
+            res = prom;
+        }
+
         else {
             res = new Mul(prom, second);
         }
 
         prom = second.derivative(variable);
-
+        //
         if (!Objects.equals(prom, new Number(0)) && !Objects.equals(first, new Number(0))) {
             res = new Add(res, new Mul(first, prom));
         }

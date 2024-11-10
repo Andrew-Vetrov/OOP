@@ -43,6 +43,14 @@ public class Div extends Expression {
             efirst = new Number(0);
         }
 
+        else if (Objects.equals(efirst, new Number(1))) {
+            efirst = second;
+        }
+
+        else if (Objects.equals(second, new Number(1))) {
+            efirst = first;
+        }
+
         else {
             efirst = new Mul(first.derivative(variable), second);
         }
@@ -52,6 +60,14 @@ public class Div extends Expression {
             esecond = new Number(0);
         }
 
+        else if (Objects.equals(esecond, new Number(1))) {
+            esecond = first;
+        }
+
+        else if (Objects.equals(first, new Number(1))) {
+            esecond = second;
+        }
+
         else {
             esecond = new Mul(first, second.derivative(variable));
         }
@@ -59,6 +75,10 @@ public class Div extends Expression {
         Expression ethird;
         if (Objects.equals(second, new Number(0))) {
             ethird = new Number(0);
+        }
+
+        else if (Objects.equals(second, new Number(1))) {
+            ethird = second;
         }
 
         else {
