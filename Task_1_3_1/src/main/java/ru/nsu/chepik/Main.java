@@ -30,7 +30,8 @@ public class Main {
             return answer;
         }
 
-        long hash, hash2, coeff = 65519, nowCoeff = 1, coeff2 = 65521, nowCoeff2 = 1, firstSymbol, firstSymbol2;
+        long hash, hash2, coeff = 65519, nowCoeff = 1, coeff2 = 65521, nowCoeff2 = 1;
+        long firstSymbol, firstSymbol2;
         final long mod = 1000000007, mod2 = 1000000009;
         long symbol, queueSymbol, nowIndx = 1;
 
