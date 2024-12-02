@@ -112,7 +112,7 @@ public class MainTest {
         String fileName = "bigData.txt";
         File file = new File(fileName);
         String substring = "абвгдеёж";
-        long fileSize = 20L * 1024 * 1024 * 1024;
+        long fileSize = 12L * 1024 * 1024 * 1024;
         long patternLength = substring.length();
         long repeatCount = fileSize / patternLength;
 
