@@ -112,15 +112,15 @@ public class MainTest {
         String fileName = "bigData.txt";
         File file = new File(fileName);
         String substring = "абвгдеёж";
-        long fileSize = 1L * 256 * 1024 * 1024;
-        long patternLength = substring.length();
+        long fileSize = 12L * 1024 * 1024 * 1024;
+        long patternLength = (long) substring.length();
         long repeatCount = fileSize / patternLength;
 
         try (Writer bwriter = new BufferedWriter(new FileWriter(file))) {
             file.createNewFile();
 
             String manySubstrings = substring.repeat(1024);
-            for (long i = 0; i < repeatCount / 1024; i++) {
+            for (long i = 0; i < repeatCount / 1024L; i++) {
                 bwriter.write(manySubstrings);
             }
 
