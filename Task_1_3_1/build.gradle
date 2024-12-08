@@ -16,7 +16,7 @@ dependencies {
 }
 
 test {
-    jvmArgs '-Xmx25600m'
+    jvmArgs '-Xmx4096m'
     useJUnitPlatform()
 }
 
