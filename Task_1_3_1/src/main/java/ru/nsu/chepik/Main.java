@@ -35,7 +35,7 @@ public class Main {
         long firstSymbol2;
         final long mod = 1000000007;
         final long mod2 = 1000000009;
-        long symbol, queueSymbol, nowIndx = 1;
+        long symbol, queueSymbol, nowIndx = 1L;
 
         if ((symbol = openFile.read()) < 0) {
             return answer;
@@ -76,7 +76,7 @@ public class Main {
         firstSymbol2 = (queueSymbol * nowCoeff2) % mod2;
 
         if (hash == substringHash && hash2 == substringHash2) {
-            answer.add((long) 0);
+            answer.add(0L);
         }
 
         while ((symbol = openFile.read()) >= 0) {
