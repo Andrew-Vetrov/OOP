@@ -22,7 +22,7 @@ class ThreadRunnable implements Runnable {
                 return;
             }
 
-            if (!PrimeNumberCheck.numberIsPrime(numbers[i])) {
+            if (PrimeNumberCheck.numberIsNotPrime(numbers[i])) {
                 parent.setResult(true);
 
                 for (int k = 0; k < threadCount; k++) {

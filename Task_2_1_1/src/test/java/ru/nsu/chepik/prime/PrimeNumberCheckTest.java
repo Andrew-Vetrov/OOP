@@ -43,7 +43,8 @@ public class PrimeNumberCheckTest {
     static Stream<PrimeNumberCheck> provideImplementations() {
         return Stream.of(
                 new SequentialPrime(),
-                new ThreadPrime(4)
+                new ThreadPrime(4),
+                new ParallelStreamPrime()
         );
     }
 }

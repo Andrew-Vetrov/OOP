@@ -12,7 +12,7 @@ public class SequentialPrime implements PrimeNumberCheck {
      */
     public boolean checkArray(long[] numbers) {
         for (long number : numbers) {
-            if (!PrimeNumberCheck.numberIsPrime(number)) {
+            if (PrimeNumberCheck.numberIsNotPrime(number)) {
                 return true;
             }
         }

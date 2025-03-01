@@ -15,6 +15,6 @@ public class ParallelStreamPrime implements PrimeNumberCheck {
      */
     public boolean checkArray(long[] numbers) {
         List<Long> listNumbers = Arrays.stream(numbers).boxed().toList();
-        return listNumbers.parallelStream().anyMatch(PrimeNumberCheck::numberIsPrime);
+        return listNumbers.parallelStream().anyMatch(PrimeNumberCheck::numberIsNotPrime);
     }
 }
