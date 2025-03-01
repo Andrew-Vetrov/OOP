@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.chepik.prime","l":"ParallelStreamPrime"},{"p":"ru.nsu.chepik.prime","l":"PrimeNumberCheck"},{"p":"ru.nsu.chepik.prime","l":"SequentialPrime"},{"p":"ru.nsu.chepik.prime","l":"ThreadPrime"}];updateSearchResults();
