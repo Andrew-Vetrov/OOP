@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
-group = 'ru.nsu.chepik'
+group = 'ru.nsu.chepik.prime'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -18,5 +19,12 @@ dependencies {
 }
 
 test {
+    jvmArgs '-Xmx4096m'
     useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
 }

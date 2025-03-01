@@ -2,6 +2,9 @@ package ru.nsu.chepik.prime;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * Класс, описывающий исполнение одной нити.
+ */
 @AllArgsConstructor
 class ThreadRunnable implements Runnable {
     private final ThreadPrime parent;
@@ -9,6 +12,9 @@ class ThreadRunnable implements Runnable {
     private final long[] numbers;
     private final int threadCount, startIndex;
 
+    /**
+     * Исполняемая нитью функция.
+     */
     @Override
     public void run() {
         for (int i = startIndex; i < numbers.length; i += threadCount) {
