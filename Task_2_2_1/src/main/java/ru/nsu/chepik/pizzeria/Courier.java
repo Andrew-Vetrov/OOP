@@ -24,6 +24,7 @@ public class Courier implements Runnable {
                 order.setStatus(Status.COMPLETED);
                 System.out.println(order);
             } catch (InterruptedException e) {
+                System.out.println(e);
                 return;
             }
         }

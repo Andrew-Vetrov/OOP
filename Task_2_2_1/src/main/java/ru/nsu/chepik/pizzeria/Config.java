@@ -2,11 +2,12 @@ package ru.nsu.chepik.pizzeria;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.io.IOException;
 
-@Getter
+@Getter @Setter
 public class Config {
     private int bakers;
     private int[] bakers_speeds;

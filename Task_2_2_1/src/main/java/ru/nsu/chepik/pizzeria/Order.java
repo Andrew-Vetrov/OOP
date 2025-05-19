@@ -13,10 +13,6 @@ public class Order {
         this.state = state;
     }
 
-    public Status getStatus() {
-        return state;
-    }
-
     @Override
     public String toString() {
         return "[" + id + "] [" + state + "]";
